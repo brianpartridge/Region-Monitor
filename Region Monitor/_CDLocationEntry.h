@@ -7,6 +7,7 @@
 extern const struct CDLocationEntryAttributes {
 	__unsafe_unretained NSString *latitude;
 	__unsafe_unretained NSString *longitude;
+	__unsafe_unretained NSString *manualEntry;
 	__unsafe_unretained NSString *timestamp;
 } CDLocationEntryAttributes;
 
@@ -15,6 +16,7 @@ extern const struct CDLocationEntryRelationships {
 
 extern const struct CDLocationEntryFetchedProperties {
 } CDLocationEntryFetchedProperties;
+
 
 
 
@@ -57,6 +59,18 @@ extern const struct CDLocationEntryFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSNumber* manualEntry;
+
+
+@property BOOL manualEntryValue;
+- (BOOL)manualEntryValue;
+- (void)setManualEntryValue:(BOOL)value_;
+
+//- (BOOL)validateManualEntry:(id*)value_ error:(NSError**)error_;
+
+
+
+
 @property (nonatomic, strong) NSDate* timestamp;
 
 
@@ -90,6 +104,15 @@ extern const struct CDLocationEntryFetchedProperties {
 
 - (double)primitiveLongitudeValue;
 - (void)setPrimitiveLongitudeValue:(double)value_;
+
+
+
+
+- (NSNumber*)primitiveManualEntry;
+- (void)setPrimitiveManualEntry:(NSNumber*)value;
+
+- (BOOL)primitiveManualEntryValue;
+- (void)setPrimitiveManualEntryValue:(BOOL)value_;
 
 
 

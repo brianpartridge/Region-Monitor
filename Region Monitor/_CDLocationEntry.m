@@ -6,6 +6,7 @@
 const struct CDLocationEntryAttributes CDLocationEntryAttributes = {
 	.latitude = @"latitude",
 	.longitude = @"longitude",
+	.manualEntry = @"manualEntry",
 	.timestamp = @"timestamp",
 };
 
@@ -47,6 +48,10 @@ const struct CDLocationEntryFetchedProperties CDLocationEntryFetchedProperties =
 	}
 	if ([key isEqualToString:@"longitudeValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"longitude"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+	}
+	if ([key isEqualToString:@"manualEntryValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"manualEntry"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 	}
 
@@ -102,6 +107,32 @@ const struct CDLocationEntryFetchedProperties CDLocationEntryFetchedProperties =
 
 - (void)setPrimitiveLongitudeValue:(double)value_ {
 	[self setPrimitiveLongitude:[NSNumber numberWithDouble:value_]];
+}
+
+
+
+
+
+@dynamic manualEntry;
+
+
+
+- (BOOL)manualEntryValue {
+	NSNumber *result = [self manualEntry];
+	return [result boolValue];
+}
+
+- (void)setManualEntryValue:(BOOL)value_ {
+	[self setManualEntry:[NSNumber numberWithBool:value_]];
+}
+
+- (BOOL)primitiveManualEntryValue {
+	NSNumber *result = [self primitiveManualEntry];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveManualEntryValue:(BOOL)value_ {
+	[self setPrimitiveManualEntry:[NSNumber numberWithBool:value_]];
 }
 
 
