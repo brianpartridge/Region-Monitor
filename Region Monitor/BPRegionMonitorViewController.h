@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BPRegionMonitorViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface BPRegionMonitorViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;

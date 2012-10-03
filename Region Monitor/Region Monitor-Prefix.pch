@@ -14,4 +14,6 @@
     #import <CoreData/CoreData.h>
     #import <MapKit/MapKit.h>
     #import <CoreLocation/CoreLocation.h>
+
+    #import "CoreData+MagicalRecord.h"
 #endif

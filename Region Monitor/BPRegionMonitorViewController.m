@@ -35,7 +35,11 @@ static NSString * const kLocationEntryCell = @"LocationEntryCell";
 {
     [super viewDidLoad];
 
-    self.results = nil;
+    self.results = [CDLocationEntry MR_fetchAllSortedBy:CDLocationEntryAttributes.timestamp
+                                              ascending:YES
+                                          withPredicate:nil
+                                                groupBy:nil
+                                               delegate:nil];
     self.formatter = [[NSDateFormatter alloc] init];;
     self.formatter.dateStyle = NSDateFormatterShortStyle;
     self.formatter.timeStyle = NSDateFormatterShortStyle;
